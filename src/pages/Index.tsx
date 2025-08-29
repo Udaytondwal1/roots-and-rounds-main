@@ -10,6 +10,7 @@ import farmerBobsLogo from "@/assets/farmer-bobs-official-logo.png";
 import heroPeppercorns from "@/assets/top deals/heena leaves.png";
 import lemonBioenzyme from "@/assets/top deals/lemon bioenzyme.png";
 import signatureCoffee from "@/assets/top deals/signature roast coffee.png";
+import signatureCoffee2 from "@/assets/best-seller/signature roasted coffee.png";
 import greenCoffeeBeans from "@/assets/top deals/green coffee beans.png";
 import spiceJars from "@/assets/spice-jars.jpg";
 import redHibiscus from "@/assets/featured-product/red hibiscus ferment.png";
@@ -356,7 +357,7 @@ const Index = () => {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             <ProductCard
-              image={signatureCoffee}
+              image={signatureCoffee2}
               name="Signature Roast Coffee"
               price="₹599"
             />
