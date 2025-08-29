@@ -159,24 +159,24 @@ const Index = () => {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             <ProductCard
-              image={lemonBioenzyme}
+              image="/src/assets/top deals/lemon bioenzyme.png"
               name="Lemon Bioenzyme"
               price="₹299"
               originalPrice="₹399"
             />
             <ProductCard
-              image={signatureCoffee}
+              image="/src/assets/top deals/signature roast coffee.png"
               name="Signature Roast Coffee"
               price="₹599"
             />
             <ProductCard
-              image={greenCoffeeBeans}
+              image="/src/assets/top deals/green coffee beans.png"
               name="Green Coffee Beans"
               price="₹449"
               originalPrice="₹549"
             />
             <ProductCard
-              image={heroPeppercorns}
+              image="/src/assets/top deals/heena leaves.png"
               name="Black Peppercorn"
               price="₹199"
             />
@@ -193,18 +193,18 @@ const Index = () => {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             <ProductCard
-              image={redHibiscus}
+              image="/src/assets/featured-product/red hibiscus ferment.png"
               name="Red Hibiscus Ferment"
               price="₹399"
             />
             <ProductCard
-              image={corianderPowder}
+              image="/src/assets/featured-product/coriander powder .png"
               name="Coriander Powder"
               price="₹149"
             />
             <ProductCard image={garamMasala} name="Garam Masala" price="₹199" />
             <ProductCard
-              image={birdsEyeChilli}
+              image="/src/assets/featured-product/bird eye chilly.png"
               name="Bird's Eye Chilli"
               price="₹249"
             />
@@ -247,7 +247,7 @@ const Index = () => {
             <Card className="group overflow-hidden rounded-lg border border-border-light hover:opacity-90 transition-opacity cursor-pointer">
               <div className="relative aspect-[4/3]">
                 <img
-                  src={beveragesCategory}
+                  src="/src/assets/categories/breverage.png"
                   alt="Beverages"
                   className="w-full h-full object-cover"
                 />
@@ -263,13 +263,13 @@ const Index = () => {
             <Card className="group overflow-hidden rounded-lg border border-border-light hover:opacity-90 transition-opacity cursor-pointer">
               <div className="relative aspect-[4/3]">
                 <img
-                  src={spiceJars}
+                  src="/src/assets/categories/jam.png"
                   alt="Spices"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-black/30 flex items-end p-6">
                   <div className="text-white">
-                    <h3 className="mb-2 text-white">Spices</h3>
+                    <h3 className="mb-2 text-white">Jams</h3>
                     <span className="text-sm underline">View Products</span>
                   </div>
                 </div>
@@ -279,13 +279,61 @@ const Index = () => {
             <Card className="group overflow-hidden rounded-lg border border-border-light hover:opacity-90 transition-opacity cursor-pointer">
               <div className="relative aspect-[4/3]">
                 <img
-                  src={heroPeppercorns}
+                  src="/src/assets/categories/honey.png"
                   alt="Black Peppercorn"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-black/30 flex items-end p-6">
                   <div className="text-white">
-                    <h3 className="mb-2 text-white">Black Peppercorn</h3>
+                    <h3 className="mb-2 text-white">Honey</h3>
+                    <span className="text-sm underline">View Products</span>
+                  </div>
+                </div>
+              </div>
+            </Card>
+
+            <Card className="group overflow-hidden rounded-lg border border-border-light hover:opacity-90 transition-opacity cursor-pointer">
+              <div className="relative aspect-[4/3]">
+                <img
+                  src="/src/assets/categories/juice.png"
+                  alt="Black Peppercorn"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-black/30 flex items-end p-6">
+                  <div className="text-white">
+                    <h3 className="mb-2 text-white">Juices</h3>
+                    <span className="text-sm underline">View Products</span>
+                  </div>
+                </div>
+              </div>
+            </Card>
+
+            <Card className="group overflow-hidden rounded-lg border border-border-light hover:opacity-90 transition-opacity cursor-pointer">
+              <div className="relative aspect-[4/3]">
+                <img
+                  src="/src/assets/categories/papadum.png"
+                  alt="Black Peppercorn"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-black/30 flex items-end p-6">
+                  <div className="text-white">
+                    <h3 className="mb-2 text-white">Papadums</h3>
+                    <span className="text-sm underline">View Products</span>
+                  </div>
+                </div>
+              </div>
+            </Card>
+
+            <Card className="group overflow-hidden rounded-lg border border-border-light hover:opacity-90 transition-opacity cursor-pointer">
+              <div className="relative aspect-[4/3]">
+                <img
+                  src={spiceJars}
+                  alt="Black Peppercorn"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-black/30 flex items-end p-6">
+                  <div className="text-white">
+                    <h3 className="mb-2 text-white">Spices</h3>
                     <span className="text-sm underline">View Products</span>
                   </div>
                 </div>
