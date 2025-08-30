@@ -23,7 +23,7 @@ export function ProductCard({ image, name, price, originalPrice, className }: Pr
         />
       </div>
       <CardContent className="p-4">
-        <h3 className="font-medium text-foreground mb-2 truncate">{name}</h3>
+        <h3 className="font-medium text-foreground mb-2 truncate font max-[575px]:text-[0.8rem] max-[575px]:font-[700] min-[1050px]:text-[1.5rem]">{name}</h3>
         <div className="flex items-center gap-2 mb-4">
           <span className="font-bold text-foreground">{price}</span>
           {originalPrice && (

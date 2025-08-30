@@ -67,7 +67,7 @@ const Index = () => {
             <img
               src="/lovable-uploads/a49e1cfe-091b-4af5-8481-4f6deebad4d9.png"
               alt="Farmer Bob's Organics"
-              className="max-[575px]:w-[30%] w-auto min-[1050px]:w-[30%]"
+              className="max-[575px]:w-[25%] w-auto min-[1050px]:w-[30%]"
             />
           </a>
           <nav className="hidden md:flex items-center gap-8">
