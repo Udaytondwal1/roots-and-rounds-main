@@ -3,7 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ProductCard } from "@/components/ProductCard";
 import { TestimonialCard } from "@/components/TestimonialCard";
 import { Search, Menu } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 // Import all images
 import farmerBobsLogo from "@/assets/farmer-bobs-official-logo.png";
@@ -34,28 +34,51 @@ import papadum from "@/assets/categories/papadum.png";
 const heroImages = [
   {
     src: "https://setmycart.blob.core.windows.net/smcproduction//5-22-2025/70d7f8d2d84f41cf8d77d9f4f4ff8c62/farmerbob%20banner.webp",
-    alt: "Black Peppercorns",
+    alt: "Banner 1",
     // Optionally add title/description if needed
   },
   {
     src: "https://setmycart.blob.core.windows.net/smcproduction//8-20-2025/ff5c71bc7652447d8b45d283d314af90/Web_Banner_2_11zon.jpg",
-    alt: "Lemon Bioenzyme",
+    alt: "Banner 2",
   },
   {
     src: "https://setmycart.blob.core.windows.net/smcproduction//8-20-2025/bc9ed334ed1f4e10a52b5f7745f61173/Web_Banner_3_11zon.jpg",
-    alt: "Signature Roast Coffee",
+    alt: "Banner 3",
+  },
+];
+
+const heroImagesMobile = [
+  {
+    src: "https://setmycart.blob.core.windows.net/smcstage//8-30-2025/cc8be2dd0a8b4f0a866b485eb17750b3/boborganics_peppercorn_mobile_view.webp",
+    alt: "Banner 1",
+  },
+  {
+    src: "https://setmycart.blob.core.windows.net/smcstage//8-30-2025/ba0182b0deee4c9d8994f36949b87f23/Mobile_Banner_2.png",
+    alt: "Banner 2",
+  },
+  {
+    src: "https://setmycart.blob.core.windows.net/smcstage//8-30-2025/828cf3f5f4e446219b96fcb249c387bb/Mobile_Banner_3.png",
+    alt: "Banner 3",
   },
 ];
 
 const Index = () => {
+  // Separate state for each carousel
   const [heroIndex, setHeroIndex] = useState(0);
+  const [heroIndexMobile, setHeroIndexMobile] = useState(0);
 
   const handlePrev = () => {
     setHeroIndex((prev) => (prev === 0 ? heroImages.length - 1 : prev - 1));
   };
-
   const handleNext = () => {
     setHeroIndex((prev) => (prev === heroImages.length - 1 ? 0 : prev + 1));
+  };
+
+  const handlePrevMobile = () => {
+    setHeroIndexMobile((prev) => (prev === 0 ? heroImagesMobile.length - 1 : prev - 1));
+  };
+  const handleNextMobile = () => {
+    setHeroIndexMobile((prev) => (prev === heroImagesMobile.length - 1 ? 0 : prev + 1));
   };
 
   return (
@@ -95,9 +118,9 @@ const Index = () => {
         </div>
       </header>
 
-      {/* Hero Banner Carousel */}
+      {/* Hero Banner Carousel - Desktop */}
       <section
-        className="relative aspect-[8/3] bg-contain bg-no-repeat w-full flex items-center bg-cover bg-center"
+        className="relative aspect-[8/3] bg-no-repeat w-full items-center bg-cover bg-center md:flex hidden"
         style={{ backgroundImage: `url(${heroImages[heroIndex].src})` }}
       >
         <div className="absolute inset-0 bg-black/10"></div>
@@ -122,8 +145,8 @@ const Index = () => {
           <div className="flex-1 flex justify-center">
             {/* Optionally add title/description for each image */}
             {/* <div className="text-center text-white">
-              <h1 className="mb-4">{heroImages[heroIndex].alt}</h1>
-            </div> */}
+                <h1 className="mb-4">{heroImages[heroIndex].alt}</h1>
+              </div> */}
           </div>
           {/* Right Scroll Button */}
           <button
@@ -149,6 +172,66 @@ const Index = () => {
               key={idx}
               className={`block w-3 h-3 rounded-full ${
                 idx === heroIndex ? "bg-primary" : "bg-white/60"
+              }`}
+            />
+          ))}
+        </div>
+      </section>
+
+      {/* Hero Banner Carousel - Mobile */}
+      <section
+        className="relative aspect-[3.5/3] bg-no-repeat w-full flex items-center bg-cover bg-center block md:hidden"
+        style={{ backgroundImage: `url(${heroImagesMobile[heroIndexMobile].src})` }}
+      >
+        <div className="absolute inset-0 bg-black/10"></div>
+        <div className="relative z-10 max-w-6xl mx-auto px-4 py-20 w-full flex items-center justify-between">
+          {/* Left Scroll Button */}
+          <button
+            aria-label="Previous"
+            onClick={handlePrevMobile}
+            className="bg-white/70 hover:bg-white rounded-full shadow-lg transition-colors absolute left-4 top-1/2 -translate-y-1/2 z-20"
+          >
+            <svg width="28" height="28" fill="none" viewBox="0 0 24 24">
+              <path
+                d="M15 19l-7-7 7-7"
+                stroke="#222"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
+          {/* Centered content (optional: add text here if needed) */}
+          <div className="flex-1 flex justify-center">
+            {/* Optionally add title/description for each image */}
+            {/* <div className="text-center text-white">
+                <h1 className="mb-4">{heroImagesMobile[heroIndexMobile].alt}</h1>
+              </div> */}
+          </div>
+          {/* Right Scroll Button */}
+          <button
+            aria-label="Next"
+            onClick={handleNextMobile}
+            className="bg-white/70 hover:bg-white rounded-full shadow-lg transition-colors absolute right-4 top-1/2 -translate-y-1/2 z-20"
+          >
+            <svg width="28" height="28" fill="none" viewBox="0 0 24 24">
+              <path
+                d="M9 5l7 7-7 7"
+                stroke="#222"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
+        </div>
+        {/* Dots indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+          {heroImagesMobile.map((_, idx) => (
+            <span
+              key={idx}
+              className={`block w-3 h-3 rounded-full ${
+                idx === heroIndexMobile ? "bg-primary" : "bg-white/60"
               }`}
             />
           ))}
